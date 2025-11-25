@@ -1,22 +1,14 @@
-// import axios from "axios";
+import axios from "axios";
 
-// const API = "https://fakestoreapi.com";
-
-// // fetch all products
+const API = "https://fakestoreapi.com";
 
 // export function getAllProducts() {
 //   return axios.get(`${API}/products`);
 // }
 
-// // fetch single product
-
 // export function getSingleProduct(id) {
 //   return axios.get(`${API}/products/${id}`);
 // }
-
-import axios from "axios";
-
-const API = "https://fakestoreapi.com";
 
 export function getAllProducts() {
   return axios.get(`${API}/products`);

@@ -1,19 +1,28 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { getSingleProduct } from "../api/products";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../redux/cartSlice";
 
 function SingleProductPage() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
-
+  const dispatch = useDispatch();
   useEffect(() => {
-    async function getProduct() {
-      let res = await fetch(`https://fakestoreapi.com/products/${id}`);
-      let data = await res.json();
-      setProduct(data);
-      setLoading(false);
-    }
-    getProduct();
+    // async function getProduct() {
+    //   let res = await fetch(`https://fakestoreapi.com/products/${id}`);
+    //   let data = await res.json();
+    //   setProduct(data);
+    //   setLoading(false);
+    // }
+    // getProduct();
+    getSingleProduct(id)
+      .then((res) => {
+        setProduct(res.data);
+        setLoading(false);
+      })
+      .catch(() => setLoading(false));
   }, [id]);
 
   if (loading) return <h1 className="text-center p-6">loading...</h1>;
@@ -41,7 +50,10 @@ function SingleProductPage() {
           ${product.price}
         </p>
 
-        <button className="bg-orange-500 text-white px-6 py-3 rounded-xl mt-5">
+        <button
+          onClick={() => addToCart(product)}
+          className="bg-orange-500 text-white px-6 py-3 rounded-xl mt-5"
+        >
           Add to Cart
         </button>
       </div>

@@ -123,7 +123,7 @@ function ProductPage() {
       <div className="grid grid-cols-4  gap-4 max-w-[1240px] w-full  ">
         {products.map((product) => (
           <Card
-            onClick={() => navigate(`/product/${product.id}`)}
+            onClick={() => navigate(`/products/${product.id}`)}
             key={product.id}
             product={product}
           />
