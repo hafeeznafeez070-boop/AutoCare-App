@@ -51,7 +51,7 @@ function SingleProductPage() {
         </p>
 
         <button
-          onClick={() => addToCart(product)}
+          onClick={() => dispatch(addToCart(product))}
           className="bg-orange-500 text-white px-6 py-3 rounded-xl mt-5"
         >
           Add to Cart
