@@ -11,7 +11,10 @@ function NavBar() {
         <Link to={"/"} className="p-2 text-[32px] font-bold hover:underline">
           <img src={navBarImg} alt="imgShop" />
         </Link>
-        <Link to={"/cart"} className="p-2  hover:underline">
+        <Link
+          to={"/cart"}
+          className="p-2 text-[18px] font-bold  hover:underline"
+        >
           Cart ({cartCount})
         </Link>
       </div>

@@ -6,7 +6,7 @@ function Card({ product, onClick }) {
   return (
     <div
       onClick={onClick}
-      className=" p-4 rounded-lg shadow hover:shadow-lg transition cursor-pointer"
+      className=" p-4 rounded-lg  hover:shadow-lg transition cursor-pointer"
     >
       <div className=" relative bg-[#F0EEED] p-5 rounded-3xl ">
         <img

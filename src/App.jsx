@@ -4,6 +4,7 @@ import ProductPage from "./pages/productPage";
 import NavBar from "./components/NavBar";
 import SingleProductPage from "./pages/SingleProductPage";
 import CartPage from "./pages/CartPage";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/products/:id" element={<SingleProductPage />} />
         <Route path="/cart" element={<CartPage />} />
       </Routes>
+      {/* <Footer /> */}
     </>
   );
 }
