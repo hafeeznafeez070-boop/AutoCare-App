@@ -35,7 +35,7 @@ function NavBar() {
             </span>
           </div>
           <div>
-            <i class="text-2xl font-bold ri-user-line"></i>
+            <i className="text-2xl font-bold ri-user-line"></i>
           </div>
         </div>
       </div>

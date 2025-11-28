@@ -16,7 +16,7 @@ import mblogo4 from "../../public/mbLogo4.png";
 import mblogo5 from "../../public/mbLogo5.png";
 import mbNewArival from "../../public/mob-new-arival.png";
 
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Card from "../components/Card";
 
 function ProductPage() {
@@ -74,7 +74,7 @@ function ProductPage() {
     //   ))}
     // </div>
     <div className=" flex flex-col  lg:items-center ">
-      <div className=" lg:bg_img_div flex items-start  lg:items-center pt-5 py-4 px-5 w-full">
+      <div className=" bg_img_div flex items-start  lg:items-center pt-5 py-4 px-5 w-full">
         <div className=" lg:ml-5 lg:w-1/2 w-full">
           <p className="   leading-10 text-[36px]  font-integralcf overflow-y-hidden  lg:text-[64px] lg:leading-16">
             FIND CLOTHES <br />
@@ -119,31 +119,45 @@ function ProductPage() {
         </div>
         <div>{/* <img src={bannerImg} alt="Image" /> */}</div>
       </div>
-      <div className="mob_bg_img_div ml-5 ">
-        {/* <img src={mobBanner} alt="imageBanner" /> */}
+      {/* mob_bg_img_div */}
+      <div className=" lg:hidden flex justify-center items-center  ">
+        <img src={mobBanner} alt="imageBanner" />
       </div>
-      <div className="bg-black text-white flex flex-col  justify-center lg:justify-around w-full lg:py-11 h-[126px]">
-        <div className="flex justify-around mb-5">
+      <div className="hidden sm:flex bg-black text-white   justify-around items-center w-full  h-[126px]">
+        <div>
+          <img src={logo_1} />
+        </div>
+        <div>
+          <img src={logo_2} />
+        </div>
+        <div>
+          <img src={logo_3} />
+        </div>
+        <div>
+          <img src={logo_4} />
+        </div>
+        <div>
+          <img src={logo_5} />
+        </div>
+      </div>
+
+      <div className=" sm:hidden bg-black text-white  xl:flex-col  my-11 justify-center lg:justify-around w-full  h-[126px]">
+        <div className="flex justify-around border-amber-50 m-6  ">
           <div>
-            <img className="sm:inline hidden " src={logo_1} />
             <img className="sm:hidden" src={mblogo1} />
           </div>
           <div>
-            <img className="sm:inline hidden" src={logo_2} />
             <img className="sm:hidden" src={mblogo2} />
           </div>
           <div>
-            <img className="sm:inline hidden" src={logo_3} />
             <img className="sm:hidden" src={mblogo3} />
           </div>
         </div>
         <div className="flex justify-around">
           <div>
-            <img className="sm:inline hidden" src={logo_4} />
             <img className="sm:hidden" src={mblogo4} />
           </div>
           <div>
-            <img className="sm:inline hidden" src={logo_5} />
             <img className="sm:hidden" src={mblogo5} />
           </div>
         </div>
@@ -154,7 +168,7 @@ function ProductPage() {
           <img className="lg:hidden " src={mbNewArival} />
         </div>
       </div>
-      <div className="grid lg:grid-cols-4 grid-cols-2  gap-2  max-w-[1240px] w-full  ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4   sm:gap-2  max-w-[1240px] w-full  ">
         {products.map((product) => (
           <Card
             onClick={() => navigate(`/products/${product.id}`)}
