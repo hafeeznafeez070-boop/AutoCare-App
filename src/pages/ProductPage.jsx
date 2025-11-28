@@ -9,6 +9,12 @@ import logo_3 from "../../public/gucci-logo-1 1.png";
 import logo_4 from "../../public/prada-logo-1 1.png";
 import logo_5 from "../../public/Group.png";
 import newArival from "../../public/NEW ARRIVALS.png";
+import mblogo1 from "../../public/mbLogo1.png";
+import mblogo2 from "../../public/mbLogo2.png";
+import mblogo3 from "../../public/mbLogo3.png";
+import mblogo4 from "../../public/mbLogo4.png";
+import mblogo5 from "../../public/mbLogo5.png";
+import mbNewArival from "../../public/mob-new-arival.png";
 
 import { Link, useNavigate } from "react-router-dom";
 import Card from "../components/Card";
@@ -116,29 +122,39 @@ function ProductPage() {
       <div className="mob_bg_img_div ml-5 ">
         {/* <img src={mobBanner} alt="imageBanner" /> */}
       </div>
-      <div className="bg-black text-white flex lg:justify-around w-full py-11">
-        <div>
-          <img src={logo_1} />
+      <div className="bg-black text-white flex flex-col  justify-center lg:justify-around w-full lg:py-11 h-[126px]">
+        <div className="flex justify-around mb-5">
+          <div>
+            <img className="sm:inline hidden " src={logo_1} />
+            <img className="sm:hidden" src={mblogo1} />
+          </div>
+          <div>
+            <img className="sm:inline hidden" src={logo_2} />
+            <img className="sm:hidden" src={mblogo2} />
+          </div>
+          <div>
+            <img className="sm:inline hidden" src={logo_3} />
+            <img className="sm:hidden" src={mblogo3} />
+          </div>
         </div>
-        <div>
-          <img src={logo_2} />
-        </div>
-        <div>
-          <img src={logo_3} />
-        </div>
-        <div>
-          <img src={logo_4} />
-        </div>
-        <div>
-          <img src={logo_5} />
+        <div className="flex justify-around">
+          <div>
+            <img className="sm:inline hidden" src={logo_4} />
+            <img className="sm:hidden" src={mblogo4} />
+          </div>
+          <div>
+            <img className="sm:inline hidden" src={logo_5} />
+            <img className="sm:hidden" src={mblogo5} />
+          </div>
         </div>
       </div>
       <div className="flex justify-center pt-[72px] pb-[55px] w-full">
         <div>
-          <img src={newArival} />
+          <img className="sm:block hidden" src={newArival} />
+          <img className="lg:hidden " src={mbNewArival} />
         </div>
       </div>
-      <div className="grid grid-cols-4  gap-4 max-w-[1240px] w-full  ">
+      <div className="grid lg:grid-cols-4 grid-cols-2  gap-2  max-w-[1240px] w-full  ">
         {products.map((product) => (
           <Card
             onClick={() => navigate(`/products/${product.id}`)}

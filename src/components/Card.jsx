@@ -10,7 +10,7 @@ function Card({ product, onClick }) {
     >
       <div className=" relative bg-[#F0EEED] p-5 rounded-3xl ">
         <img
-          className="w-[295px] h-[298px] object-contain"
+          className="w-[295px] h-[200px] lg:h-[298px] object-contain"
           // className="h-40 mx-auto"
           src={product.image}
         />
@@ -18,14 +18,14 @@ function Card({ product, onClick }) {
 
       <h3
         // className="mt-2 font-semibold line-clamp-2"
-        className="text-[20px] font-satoshi font-bold mt-4 mb-2"
+        className="lg:text-[20px] text-[16px] font-satoshi font-bold mt-4 mb-2"
       >
         {product.title.slice(0, 20)}
       </h3>
       <img src={ratingImg} />
       <p
         // className="text-green-600 font-bold mt-1"
-        className="text-[24px] font-bold mt-2 mb-4"
+        className="sm:text-[24px] font-bold  text-[20px]  mt-2 mb-4"
       >
         ${product.price}
       </p>
