@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getAllProducts } from "../api/products";
 import { use } from "react";
 import bannerImg from "../../public/banner-img.png";
+import mobBanner from "../../public/mobileBanner.png";
 import logo_1 from "../../public/Vector.png";
 import logo_2 from "../../public/zara-logo-1 1.png";
 import logo_3 from "../../public/gucci-logo-1 1.png";
@@ -66,39 +67,56 @@ function ProductPage() {
     //     </div>
     //   ))}
     // </div>
-    <div className="flex flex-col items-center">
-      <div className=" bg_img_div flex  items-center p-10 w-full">
-        <div className=" ml-5 lg:w-1/2 w-full">
-          <p className=" font-bold text-[64px] leading-16">
+    <div className=" flex flex-col  lg:items-center ">
+      <div className=" lg:bg_img_div flex items-start  lg:items-center pt-5 py-4 px-5 w-full">
+        <div className=" lg:ml-5 lg:w-1/2 w-full">
+          <p className="   leading-10 text-[36px]  font-integralcf overflow-y-hidden  lg:text-[64px] lg:leading-16">
             FIND CLOTHES <br />
             THAT MATCHES YOUR STYLE
           </p>
-          <p className="text-[16px] opacity-60 mt-[29px]">
+          <p className="font-satoshi text-[14px] lg:text-[16px] opacity-60 mt-[29px]">
             Browse through our diverse range of meticulously crafted garments,
             designed to bring out your individuality and cater to your sense of
             style.
           </p>
-          <button className="bg-black text-[16px] text-white rounded-3xl mt-[35px] shadow w-[210px] h-[52px]">
+          <button className="bg-black text-[16px] text-white rounded-3xl mt-[35px] shadow w-95 lg:w-[210px] h-[52px]">
             Shop Now
           </button>
-          <div className="flex  mt-7">
-            <div className="border-r pr-8 border-[#00000010] ">
-              <p className="text-[40px] font-bold ">200+</p>
-              <p className="text-[16px] opacity-60">International Brand</p>
+          <div className="lg:flex  mt-7">
+            <div className="flex   justify-around ">
+              <div className=" lg:border-r lg:pr-8 border-[#00000010] ">
+                <p className="lg:text-[40px]  text-[24px] font-satoshi font-bold ">
+                  200+
+                </p>
+                <p className="lg:text-[16px] text-[12px] font-satoshi opacity-60">
+                  International Brand
+                </p>
+              </div>
+              <div className="lg:border-r lg:pr-8 lg:pl-8  border-[#00000010] ">
+                <p className="lg:text-[40px] text-[24px] font-satoshi font-bold">
+                  2,000+
+                </p>
+                <p className="lg:text-[16px]  text-[12px] font-satoshi opacity-60">
+                  High-Quality Products
+                </p>
+              </div>
             </div>
-            <div className="border-r pr-8 pl-8  border-[#00000010] ">
-              <p className="text-[40px] font-bold">2,000+</p>
-              <p className="text-[16px] opacity-60">High-Quality Products</p>
-            </div>
-            <div className="pl-8 pr-8">
-              <p className="text-[40px] font-bold">30,000+</p>
-              <p className="text-[16px] opacity-60">Happy Customers</p>
+            <div className="flex flex-col mt-3 justify-center items-center lg:pl-8 lg:pr-8">
+              <p className="lg:text-[40px] text-[24px] font-satoshi font-bold">
+                30,000+
+              </p>
+              <p className="lg:text-[16px] text-[12px]  font-satoshi opacity-60">
+                Happy Customers
+              </p>
             </div>
           </div>
         </div>
         <div>{/* <img src={bannerImg} alt="Image" /> */}</div>
       </div>
-      <div className="bg-black text-white flex justify-around w-full py-11">
+      <div className="mob_bg_img_div ml-5 ">
+        {/* <img src={mobBanner} alt="imageBanner" /> */}
+      </div>
+      <div className="bg-black text-white flex lg:justify-around w-full py-11">
         <div>
           <img src={logo_1} />
         </div>

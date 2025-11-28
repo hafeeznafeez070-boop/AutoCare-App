@@ -1,23 +1,32 @@
 @import "tailwindcss";
 @font-face {
   font-family: "Satoshi";
-  src: url("./fonts/Satoshi-Regular.woff2") format("woff2"),
-    url("./fonts/Satoshi-Regular.woff") format("woff");
+  src: url("./fonts/Satoshi-Variable.ttf") format("truetype");
   font-weight: 400; /* Regular */
   font-style: normal;
 }
-
 @font-face {
-  font-family: "Satoshi";
-  src: url("./fonts/Satoshi-Bold.woff2") format("woff2"),
-    url("./fonts/Satoshi-Bold.woff") format("woff");
-  font-weight: 700; /* Bold */
-  font-style: normal;
+  font-family: "IntegralCf";
+  src: url("./fonts/IntegralCf/Fontspring-DEMO-integralcf-bold.otf");
 }
-
-/* Add more @font-face rules for other weights/styles if needed */
-
+@layer utilities {
+  .font-satoshi {
+    font-family: "Satoshi";
+  }
+  .font-integralcf {
+    font-family: "IntegralCf";
+  }
+}
 .bg_img_div {
   background-image: url("../public/banner-img.png");
   height: 100vh;
+  background-repeat: no-repeat;
+}
+.mob_bg_img_div {
+  background-image: url("../public/mobileBanner.png");
+  height: 100vh;
+  background-repeat: no-repeat;
+}
+* {
+  overflow-x: hidden;
 }

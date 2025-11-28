@@ -18,7 +18,7 @@ function Card({ product, onClick }) {
 
       <h3
         // className="mt-2 font-semibold line-clamp-2"
-        className="text-[20px] font-bold mt-4 mb-2"
+        className="text-[20px] font-satoshi font-bold mt-4 mb-2"
       >
         {product.title.slice(0, 20)}
       </h3>
