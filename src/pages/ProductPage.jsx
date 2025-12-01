@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { getAllProducts } from "../api/products";
 import { use } from "react";
-import bannerImg from "../../public/banner-img.png";
-import mobBanner from "../../public/mobileBanner.png";
-import logo_1 from "../../public/Vector.png";
-import logo_2 from "../../public/zara-logo-1 1.png";
-import logo_3 from "../../public/gucci-logo-1 1.png";
-import logo_4 from "../../public/prada-logo-1 1.png";
-import logo_5 from "../../public/Group.png";
-import newArival from "../../public/NEW ARRIVALS.png";
-import mblogo1 from "../../public/mbLogo1.png";
-import mblogo2 from "../../public/mbLogo2.png";
-import mblogo3 from "../../public/mbLogo3.png";
-import mblogo4 from "../../public/mbLogo4.png";
-import mblogo5 from "../../public/mbLogo5.png";
-import mbNewArival from "../../public/mob-new-arival.png";
-import topSelling from "../../public/top selling.png";
-import mobTopSelling from "../../public/top selling_mob.png";
+import bannerImg from "/banner-img.png";
+import mobBanner from "/mobileBanner.png";
+import logo_1 from "/Vector.png";
+import logo_2 from "/zara-logo-1 1.png";
+import logo_3 from "/gucci-logo-1 1.png";
+import logo_4 from "/prada-logo-1 1.png";
+import logo_5 from "/Group.png";
+import newArival from "/NEW ARRIVALS.png";
+import mblogo1 from "/mbLogo1.png";
+import mblogo2 from "/mbLogo2.png";
+import mblogo3 from "/mbLogo3.png";
+import mblogo4 from "/mbLogo4.png";
+import mblogo5 from "/mbLogo5.png";
+import mbNewArival from "/mob-new-arival.png";
+import topSelling from "/top selling.png";
+import mobTopSelling from "/top selling_mob.png";
 
 import { useNavigate } from "react-router-dom";
 import Card from "../components/Card";
@@ -108,7 +108,7 @@ function ProductPage() {
             designed to bring out your individuality and cater to your sense of
             style.
           </p>
-          <button className="bg-black text-[16px] text-white rounded-3xl mt-[35px] shadow w-95 lg:w-[210px] h-[52px]">
+          <button className="bg-black text-[16px] text-white rounded-3xl mt-[35px] shadow w-[98%] sm:w-[210px] h-[52px]">
             Shop Now
           </button>
           <div className="lg:flex  mt-7">
@@ -165,7 +165,7 @@ function ProductPage() {
       </div>
 
       <div className=" sm:hidden bg-black text-white  xl:flex-col  my-11 justify-center lg:justify-around w-full  h-[126px]">
-        <div className="flex justify-around border-amber-50 m-6  ">
+        <div className="flex justify-between border-amber-50 my-6 mx-3 ">
           <div>
             <img className="sm:hidden" src={mblogo1} />
           </div>
