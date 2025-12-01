@@ -15,6 +15,8 @@ import mblogo3 from "../../public/mbLogo3.png";
 import mblogo4 from "../../public/mbLogo4.png";
 import mblogo5 from "../../public/mbLogo5.png";
 import mbNewArival from "../../public/mob-new-arival.png";
+import topSelling from "../../public/top selling.png";
+import mobTopSelling from "../../public/top selling_mob.png";
 
 import { useNavigate } from "react-router-dom";
 import Card from "../components/Card";
@@ -38,6 +40,7 @@ function ProductPage() {
   // if (loading) return <h2 className="p-6">Loading...</h2>;
   // if (error) return <h2 className="p-6 text-red-500">{error}</h2>;
   const [products, setProducts] = useState([]);
+  const [topRatedProducts, setTopRatedProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const navigate = useNavigate();
@@ -53,9 +56,29 @@ function ProductPage() {
         setLoading(false);
       });
   }, []);
-  // console.log(products);
+  // if (products[0]) {
+  //   console.log(products[0].rating.rate);
+  // }
+
+  const topRatingFunction = () => {
+    if (products[0]) {
+      for (const product of products) {
+        if (product.rating.rate >= 4.5) {
+          setTopRatedProducts((prev) => [...prev, product]);
+          // console.log(product.rating);
+        }
+      }
+      console.log(topRatedProducts);
+    }
+  };
+
+  useEffect(() => {
+    topRatingFunction();
+  }, [products]);
+
   if (loading) return <h2 className="p-6">Loading...</h2>;
   if (error) return <h2 className="p-6 text-red-500">{error}</h2>;
+
   return (
     // <div className="p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
     //   {products.map((product) => (
@@ -120,7 +143,7 @@ function ProductPage() {
         <div>{/* <img src={bannerImg} alt="Image" /> */}</div>
       </div>
       {/* mob_bg_img_div */}
-      <div className=" lg:hidden flex justify-center items-center  ">
+      <div className=" lg:hidden flex bg-[#F0EEED] justify-center items-center  ">
         <img src={mobBanner} alt="imageBanner" />
       </div>
       <div className="hidden sm:flex bg-black text-white   justify-around items-center w-full  h-[126px]">
@@ -176,6 +199,25 @@ function ProductPage() {
             product={product}
           />
         ))}
+      </div>
+      <div>
+        <div className="flex justify-center items-center my-10">
+          <img
+            className="sm:hidden flex"
+            src={mobTopSelling}
+            alt="Top Selling"
+          />
+          <img className="hidden sm:flex" src={topSelling} alt="Top Selling" />
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4   sm:gap-2  max-w-[1240px] w-full  ">
+          {topRatedProducts.map((product) => (
+            <Card
+              onClick={() => navigate(`/products/${product.id}`)}
+              key={product.id}
+              product={product}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

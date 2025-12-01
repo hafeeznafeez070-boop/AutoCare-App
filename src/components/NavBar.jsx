@@ -14,7 +14,7 @@ function NavBar() {
           <div className="p-2">
             <i className="text-2xl font-bold text-black  ri-menu-line"></i>
           </div>
-          <div className="p-2">
+          <div className="p-2 ">
             <Link
               to={"/"}
               className=" text-[25px] font-integralcf  hover:underline"
