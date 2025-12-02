@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { decreaseQty, increaseQty, removeFromCart } from "../redux/cartSlice";
+import cartImg from "/Your cart_web.png";
 
 function CartPage() {
   const items = useSelector((state) => state.cart.items);
@@ -13,9 +14,11 @@ function CartPage() {
 
   return (
     <div className="p-6">
-      <h1 className="text-3xl mb-6">Your Cart</h1>
+      <div className="pt-5 pb-10">
+        <img src={cartImg} alt="Cart Image" />
+      </div>
 
-      <div className="flex flex-col gap-6">
+      <div className="flex flex-col w-1/2  gap-6">
         {items.map((item, index) => (
           <div
             key={index}
@@ -29,11 +32,23 @@ function CartPage() {
             />
 
             {/* DETAILS */}
-            <div className="flex-1">
-              <h2 className="font-bold">{item.title}</h2>
-              <p className="text-green-600 font-bold mt-2">${item.price}</p>
+            <div className="flex-1   ">
+              <div className="flex justify-between p-3">
+                <div>
+                  <h2 className="font-bold">{item.title}</h2>
+                  <p className="text-green-600 font-bold mt-2">${item.price}</p>
+                </div>
+                <div>
+                  <button
+                    onClick={() => dispatch(removeFromCart(item.id))}
+                    className=" text-red-600    text-3xl   rounded-xl"
+                  >
+                    <i class="ri-delete-bin-fill"></i>
+                  </button>
+                </div>
+              </div>
               {/* QUANTITY BUTTONS */}
-              <div className="flex items-center gap-4 mt-3">
+              <div className="flex justify-end gap-4  ">
                 <button
                   className="px-3 py-1 bg-gray-300 rounded"
                   onClick={() => dispatch(decreaseQty(item.id))}
@@ -53,12 +68,6 @@ function CartPage() {
             </div>
 
             {/* REMOVE BUTTON */}
-            <button
-              onClick={() => dispatch(removeFromCart(item.id))}
-              className="bg-red-600 text-white px-4 py-2 rounded-xl"
-            >
-              Remove
-            </button>
           </div>
         ))}
       </div>
